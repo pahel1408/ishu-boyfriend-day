@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Ishu ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #5b1837;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffd6e8, transparent 35%),
+        radial-gradient(circle at 80% 80%, #f6a6c7, transparent 40%),
+        linear-gradient(135deg, #fff0f6, #ffc5dc, #f49abb);
+
+    overflow-x: hidden;
+}
+
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: rgba(255,255,255,0.7);
+    font-size: 20px;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+
+/* PAGES */
+
+.page {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 22px 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.page.active {
+    display: flex;
+    animation: pageIn 0.7s ease;
+}
+
+@keyframes pageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    text-align: center;
+}
+
+
+/* TEXT */
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #a63e68;
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+h1 {
+    font-size: clamp(60px, 10vw, 105px);
+    line-height: 0.9;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: clamp(45px, 7vw, 75px);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.pink {
+    color: #d92d72;
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #7d3150;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.main-button {
+    border: none;
+    padding: 15px 34px;
+    border-radius: 40px;
+
+    background: #d93675;
+    color: white;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    box-shadow: 0 10px 30px rgba(170,40,90,0.2);
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+.secondary-button {
+    border: 1px solid #d93675;
+    padding: 15px 34px;
+    border-radius: 40px;
+
+    background: rgba(255,255,255,0.4);
+    color: #a51e58;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.secondary-button:hover {
+    background: rgba(255,255,255,0.7);
+    transform: translateY(-4px);
+}
+
+
+/* FUNNY PAGE */
+
+.funny {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 6vw, 60px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.emoji {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+
+/* MESSAGE */
+
+.big-message {
+    max-width: 760px;
+    margin: auto;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(23px, 4vw, 31px);
+    line-height: 1.6;
+
+    color: #641d3d;
+}
+
+.big-message span {
+    color: #d52e70;
+}
+
+
+/* STORY */
+
+.story {
+    max-width: 780px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.story-item {
+    padding: 0 0 35px 35px;
+    margin-left: 10px;
+    border-left: 2px solid rgba(190,45,100,0.35);
+    position: relative;
+}
+
+.story-item:last-child {
+    border-left: none;
+}
+
+.story-item::before {
+    content: "♡";
+
+    position: absolute;
+    left: -11px;
+    top: -3px;
+
+    color: #d92d72;
+    background: #ffc9de;
+
+    font-size: 18px;
+}
+
+.story-date {
+    color: #bd2c65;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.story-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 31px;
+    margin-bottom: 8px;
+}
+
+.story-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #71334f;
+}
+
+
+/* COMPLIMENTS */
+
+.compliment-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.compliment {
+
+    min-height: 125px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.42);
+
+    border: 1px solid rgba(190,45,100,0.18);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: 0.3s;
+
+    box-shadow: 0 8px 25px rgba(170,40,90,0.08);
+}
+
+.compliment:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.65);
+}
+
+.number {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+
+    font-size: 10px;
+    color: #c04a76;
+}
+
+.tap {
+    color: #9b4667;
+    font-size: 12px;
+}
+
+.answer {
+    display: none;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.3;
+
+    color: #681a3e;
+}
+
+.compliment.revealed .tap {
+    display: none;
+}
+
+.compliment.revealed .answer {
+    display: block;
+}
+
+
+/* FINAL */
+
+.final-heart {
+    font-size: 65px;
+    color: #d92d72;
+
+    animation: pulse 1.7s infinite;
+}
+
+@keyframes pulse {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+.final-message {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(25px, 5vw, 42px);
+    line-height: 1.5;
+}
+
+.forever {
+    margin-top: 25px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(45px, 8vw, 78px);
+
+    color: #d92d72;
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 10px;
+
+    z-index: 20;
+}
+
+.nav {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.65);
+
+    color: #8f2853;
+
+    font-size: 11px;
+
+    box-shadow: 0 5px 20px rgba(160,40,90,0.12);
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    .compliment-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media(max-width:450px) {
+
+    .compliment-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+<div class="container">
+
+    <div class="small-title">
+        something special for you
+    </div>
+
+    <h1>
+        Happy<br>
+        <span class="pink">Boyfriend's Day</span>
+    </h1>
+
+    <div class="subtitle">
+        Ishu ♡
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="main-button"
+            onclick="nextPage()">
+            OPEN ♡
+        </button>
+
+        <button
+            class="secondary-button"
+            onclick="funnyPage()">
+            DO NOT OPEN
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- FUNNY PAGE -->
+
+<section class="page" id="funnyPage">
+
+<div class="container">
+
+    <div class="emoji">
+        😭
+    </div>
+
+    <div class="funny">
+        Wrong choice.
+        <br>
+        You have officially been
+        attacked by 100 imaginary pillows.
+    </div>
+
+    <div class="subtitle">
+        Now go back and press OPEN. 😭
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="main-button"
+            onclick="goToPage(1)">
+            Okay okay 😭
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+<div class="container">
+
+    <div class="small-title">
+        wait...
+    </div>
+
+    <h2>
+        Are you sure<br>
+        you want to continue?
+    </h2>
+
+    <div class="subtitle">
+        There's no going back after this. ♡
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="main-button"
+            onclick="nextPage()">
+            YES
+        </button>
+
+        <button
+            class="secondary-button"
+            onclick="nextPage()">
+            YESSS
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 3 MESSAGE -->
+
+<section class="page" id="page3">
+
+<div class="container">
+
+    <div class="small-title">
+        okay, now listen
+    </div>
+
+    <h2>
+        A little message<br>
+        for my favourite person.
+    </h2>
+
+    <div class="big-message">
+
+        Before you became my boyfriend,
+        you were my best friend for two years.
+
+        <br><br>
+
+        And honestly, I think that's one of
+        my favourite things about us.
+
+        <br><br>
+
+        You weren't just someone I suddenly
+        fell for. You were someone I already
+        knew, trusted, laughed with and
+        slowly became more and more
+        comfortable with.
+
+        <br><br>
+
+        And then somehow,
+        on <span>8th May</span>,
+        we became <span>us.</span>
+
+        <br><br>
+
+        I don't think I knew that one decision
+        could become such a beautiful part
+        of my life.
+
+        <br><br>
+
+        I'm really glad I said yes to you. ♡
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 4 STORY -->
+
+<section class="page" id="page4">
+
+<div class="container">
+
+    <div class="small-title">
+        our story
+    </div>
+
+    <h2>
+        How we became us.
+    </h2>
+
+
+    <div class="story">
+
+
+        <div class="story-item">
+
+            <div class="story-date">
+                The beginning
+            </div>
+
+            <div class="story-title">
+                A random WhatsApp group
+            </div>
+
+            <div class="story-text">
+                We first met through a WhatsApp
+                group with our friends.
+
+                Neither of us probably knew
+                that this random meeting would
+                eventually become something
+                this special.
+            </div>
+
+        </div>
+
+
+        <div class="story-item">
+
+            <div class="story-date">
+                Then
+            </div>
+
+            <div class="story-title">
+                WhatsApp → Instagram
+            </div>
+
+            <div class="story-text">
+                We started talking in WhatsApp
+                DMs and eventually moved to
+                Instagram too.
+
+                We had regular conversations,
+                even talking about our crushes
+                from before.
+            </div>
+
+        </div>
+
+
+        <div class="story-item">
+
+            <div class="story-date">
+                At first
+            </div>
+
+            <div class="story-title">
+                Just friends
+            </div>
+
+            <div class="story-text">
+                The funniest part is that we
+                initially considered each other
+                like brother and sister.
+
+                But slowly, gradually, we started
+                talking more.
+            </div>
+
+        </div>
+
+
+        <div class="story-item">
+
+            <div class="story-date">
+                Slowly
+            </div>
+
+            <div class="story-title">
+                We became important.
+            </div>
+
+            <div class="story-text">
+                We became more friendly,
+                more comfortable with each
+                other, and eventually became
+                genuinely important to each other.
+
+                Somewhere along the way,
+                things started changing.
+            </div>
+
+        </div>
+
+
+        <div class="story-item">
+
+            <div class="story-date">
+                7th May
+            </div>
+
+            <div class="story-title">
+                The conversation
+            </div>
+
+            <div class="story-text">
+                We finally talked about the
+                feelings that had been growing
+                between us.
+
+                At that time, I wasn't really
+                interested in becoming a couple.
+            </div>
+
+        </div>
+
+
+        <div class="story-item">
+
+            <div class="story-date">
+                8th May ♡
+            </div>
+
+            <div class="story-title">
+                The day we became us.
+            </div>
+
+            <div class="story-text">
+                The next day, I talked to my
+                friends and thought about
+                everything.
+
+                I realised that you were a
+                genuinely nice person and that
+                maybe we could actually be
+                something more.
+
+                So I decided to give us a chance.
+
+                <br><br>
+
+                And honestly?
+
+                <br><br>
+
+                <strong>
+                That was one of the best
+                decisions I've ever made.
+                </strong>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 5 COMPLIMENTS -->
+
+<section class="page" id="page5">
+
+<div class="container">
+
+    <div class="small-title">
+        15 little things
+    </div>
+
+    <h2>
+        Tap to reveal ♡
+    </h2>
+
+
+    <div class="compliment-grid">
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">01</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love how naturally you care about me.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">02</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love how you always make me feel important.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">03</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love when you call me “mera bachaa.”
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">04</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love how comfortable we became with each other.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">05</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love that you were my best friend before becoming my boyfriend.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">06</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love how you slowly became one of my favourite people.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">07</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love that our story started so randomly.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">08</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love all the random conversations we've had.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">09</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love how caring you are towards me.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">10</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love how we went from “brother-sister” to this. 😭
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">11</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love that you know the friend version of me too.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">12</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love that one conversation on 7th May changed everything.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">13</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love that saying yes on 8th May became such a beautiful decision.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">14</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                I love the way you make our relationship feel like ours.
+            </span>
+        </div>
+
+
+        <div class="compliment" onclick="reveal(this)">
+            <span class="number">15</span>
+            <span class="tap">tap me ♡</span>
+            <span class="answer">
+                Most of all, I love that somehow we found each other. ♡
+            </span>
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 6 FINAL -->
+
+<section class="page" id="page6">
+
+<div class="container">
+
+    <div class="final-heart">
+        ♡
+    </div>
+
+    <div class="small-title">
+        one last thing
+    </div>
+
+    <div class="final-message">
+
+        From a random WhatsApp group...
+
+        <br><br>
+
+        to friends...
+
+        <br><br>
+
+        to best friends...
+
+        <br><br>
+
+        to <span class="pink">us.</span>
+
+    </div>
+
+    <div class="forever">
+        Forever stay with me.
+    </div>
+
+    <div class="subtitle">
+        Happy Boyfriend's Day, Ishu ♡
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+    <button class="nav" onclick="previousPage()">
+        ← Back
+    </button>
+
+    <button class="nav" onclick="nextPage()">
+        Next →
+    </button>
+
+</div>
+
+
+<script>
+
+let currentPage = 1;
+
+const totalPages = 6;
+
+
+/* GO TO PAGE */
+
+function goToPage(page) {
+
+    document.querySelectorAll('.page').forEach(function(section) {
+        section.classList.remove('active');
+    });
+
+    document.getElementById('page' + page).classList.add('active');
+
+    currentPage = page;
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+
+/* NEXT */
+
+function nextPage() {
+
+    if (currentPage < totalPages) {
+        goToPage(currentPage + 1);
+    }
+
+}
+
+
+/* BACK */
+
+function previousPage() {
+
+    if (currentPage > 1) {
+        goToPage(currentPage - 1);
+    }
+
+}
+
+
+/* FUNNY BUTTON */
+
+function funnyPage() {
+
+    document.querySelectorAll('.page').forEach(function(section) {
+        section.classList.remove('active');
+    });
+
+    document.getElementById('funnyPage').classList.add('active');
+
+}
+
+
+/* COMPLIMENT */
+
+function reveal(card) {
+
+    card.classList.toggle('revealed');
+
+}
+
+
+/* FLOATING HEARTS */
+
+function createHeart() {
+
+    const heart = document.createElement('div');
+
+    heart.className = 'heart';
+
+    heart.innerHTML = '♡';
+
+    heart.style.left =
+        Math.random() * 100 + 'vw';
+
+    heart.style.fontSize =
+        (12 + Math.random() * 18) + 'px';
+
+    heart.style.animationDuration =
+        (6 + Math.random() * 6) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 12000);
+
+}
+
+setInterval(createHeart, 700);
+
+</script>
+
+</body>
+</html>
